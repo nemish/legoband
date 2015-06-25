@@ -19,3 +19,4 @@ gulp.task('watch', function() {
   gulp.watch(paths.less.src, ['less']);
 });
 
+gulp.task('default', ['less', 'watch']);

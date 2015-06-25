@@ -21,6 +21,35 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Lobster', sans-serif;
 }
 
+
+/******   Common styles   *****/
+
+.transition {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+a.icon-link {
+  color: @white;
+  position: relative;
+}
+
+a.icon-link:hover {
+  color: @white;
+  cursor: pointer;
+}
+
+.en-title {
+    font-family: 'Kaushan Script', sans-serif;
+}
+
+.pretty-title {
+    font-family: 'Lobster', cursive;
+}
+
+
+/******   Intro section   *****/
+
 .intro {
   background: url("@{img_path}/header_full_cropped.jpg") no-repeat center top;
   height: 100%;
@@ -46,6 +75,18 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 10px;
 }
 
+.arrow-down-icon {
+  font-size: floor((@font-size-h1));
+  top: 0;
+}
+
+.arrow-down-icon:hover {
+  top: 10px;
+}
+
+
+/******   Slogan section   *****/
+
 .slogan {
   color: @green;
 }
@@ -53,6 +94,9 @@ h1, h2, h3, h4, h5, h6 {
 .slogan h2 {
   padding-bottom: 10px;
 }
+
+
+/******   Promo section   *****/
 
 .promo {
   background: url("@{img_path}/promo_background.jpg") no-repeat center top;
@@ -87,12 +131,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .promo-play-icon {
   font-size: floor((@font-size-h1 * 3.0));
+  top: 0;
 }
 
-.en-title {
-    font-family: 'Kaushan Script', sans-serif;
+.promo-play-icon:hover {
+  top: -15px;
 }
 
-.pretty-title {
-    font-family: 'Lobster', cursive;
-}

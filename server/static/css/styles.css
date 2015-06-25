@@ -6783,6 +6783,26 @@ h5,
 h6 {
   font-family: 'Lobster', sans-serif;
 }
+/******   Common styles   *****/
+.transition {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+a.icon-link {
+  color: #ffffff;
+  position: relative;
+}
+a.icon-link:hover {
+  color: #ffffff;
+  cursor: pointer;
+}
+.en-title {
+  font-family: 'Kaushan Script', sans-serif;
+}
+.pretty-title {
+  font-family: 'Lobster', cursive;
+}
+/******   Intro section   *****/
 .intro {
   background: url("../img/header_full_cropped.jpg") no-repeat center top;
   height: 100%;
@@ -6804,12 +6824,21 @@ h6 {
 .welcome h4 {
   padding-bottom: 10px;
 }
+.arrow-down-icon {
+  font-size: 36px;
+  top: 0;
+}
+.arrow-down-icon:hover {
+  top: 10px;
+}
+/******   Slogan section   *****/
 .slogan {
   color: #33cc66;
 }
 .slogan h2 {
   padding-bottom: 10px;
 }
+/******   Promo section   *****/
 .promo {
   background: url("../img/promo_background.jpg") no-repeat center top;
   height: 100%;
@@ -6838,10 +6867,8 @@ h6 {
 }
 .promo-play-icon {
   font-size: 108px;
+  top: 0;
 }
-.en-title {
-  font-family: 'Kaushan Script', sans-serif;
-}
-.pretty-title {
-  font-family: 'Lobster', cursive;
+.promo-play-icon:hover {
+  top: -15px;
 }

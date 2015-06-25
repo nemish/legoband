@@ -8,6 +8,7 @@
     <title>Lego - cover band</title>
 
     <link href="{{ url_for('static', filename="css/styles.css") }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename="lib/fancybox/source/jquery.fancybox.css") }}" rel="stylesheet">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -33,28 +34,31 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a class="smoothScroll pretty-title" href="#h">Главная</a></li>
-            <li><a class="smoothScroll pretty-title" href="#chefs">Видео</a></li>
-            <li><a class="smoothScroll pretty-title" href="#chefs">Фото</a></li>
-            <li><a class="smoothScroll pretty-title" href="#dishes">Состав</a></li>
-            <li><a class="smoothScroll pretty-title" href="">Связаться</a></li>
+            <li class="active"><a class="smooth-scroll pretty-title" href="#h">Главная</a></li>
+            <li><a class="smooth-scroll pretty-title" href="#promo">Видео</a></li>
+            <li><a class="smooth-scroll pretty-title" href="#photo">Фото</a></li>
+            <li><a class="smooth-scroll pretty-title" href="#staff">Состав</a></li>
+            <li><a class="smooth-scroll pretty-title" href="#contacts">Связаться</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
-    <header class="intro">
+    <header class="intro" id="h">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center welcome">
                     <h1>Мы <span class="en-title">LEGO</span> band!</h1>
                     <h4>Акустический кавер-проект, от которого вам станет хорошо</h4>
+                    <a class="icon-link smooth-scroll" href="#slogan-section">
+                        <span class="glyphicon glyphicon-chevron-down arrow-down-icon transition"></span>
+                    </a>
                 </div>
             </div>
         </div>
     </header>
 
-    <section class="slogan">
+    <section class="slogan" id="slogan-section">
         <div class="container">
             <div class="row text-center">
                 <h2>Надеемся, вы любите хорошую музыку так же как и мы :)</h2>
@@ -62,23 +66,28 @@
         </div>
     </section>
 
-    <section class="promo">
+    <section class="promo" id="promo">
         <div class="cloak">
             <div class="container">
                 <div class="row text-center promo-container vcenter">
                     <h1 class="promo-text">Посмотрите наше промо видео</h1>
                     <br>
-                    <p><span class="glyphicon glyphicon-play-circle promo-play-icon"></span></p>
+                    <p>
+                        <a class="fancybox-media icon-link" href="https://vimeo.com/125882554">
+                            <span class="glyphicon glyphicon-play-circle promo-play-icon transition"></span>
+                        </a>
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="{{ url_for('static', filename="lib/jquery/dist/jquery.min.js") }}"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{{ url_for('static', filename="lib/bootstrap/dist/js/bootstrap.min.js") }}"></script>
-    <script src=""></script>
+    <script src="{{ url_for('static', filename="lib/fancybox/source/jquery.fancybox.js") }}"></script>
+    <script src="{{ url_for('static', filename="lib/fancybox/source/helpers/jquery.fancybox-media.js") }}"></script>
+    <script src="{{ url_for('static', filename="lib/jquery-smooth-scroll/jquery.smooth-scroll.js") }}"></script>
+    <script src="{{ url_for('static', filename="js/main.js") }}"></script>
   </body>
 </html>
