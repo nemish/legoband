@@ -152,12 +152,36 @@ class MyAdminIndexView(admin.AdminIndexView):
 # Flask views
 @app.route('/')
 def index():
-    return render_template('index.html')
-
-@app.route('/index2')
-def index2():
-    return render_template('index2.html')
-
+    return render_template('index.html', **{
+        'staff': [{
+            'big_img_url': url_for('static', filename="img/staff_3.jpg"),
+            'small_img_url': url_for('static', filename="img/staff_3_sm.jpg"),
+            'name': u'Наташа Павлова',
+            'desc': u'На гитаре может слабать все от Хендрикса до Цоя'
+        }, {
+            'big_img_url': url_for('static', filename="img/staff_2.jpg"),
+            'small_img_url': url_for('static', filename="img/staff_2_sm.jpg"),
+            'name': u'Имя Фамилия',
+            'desc': u'С помощью бас-гитары играет на струнках вашей души'
+        }, {
+            'big_img_url': url_for('static', filename="img/staff_4.jpg"),
+            'small_img_url': url_for('static', filename="img/staff_4_sm.jpg"),
+            'name': u'Имя Фамилия',
+            'desc': u'От ее голоса стаканы не лопаются, а склеиваются обратно'
+        }, {
+            'big_img_url': url_for('static', filename="img/staff_1.jpg"),
+            'small_img_url': url_for('static', filename="img/staff_1_sm.jpg"),
+            'name': u'Имя Фамилия',
+            'desc': u'Первый случай в истории, когда человек родился с кахоном в руках'
+        }],
+        'photo_gallery': [{
+            'url': url_for('static', filename="img/photo/photo1.jpg")
+        }, {
+            'url': url_for('static', filename="img/photo/photo2.jpg")
+        }, {
+            'url': url_for('static', filename="img/photo/photo3.jpg")
+        }]
+    })
 
 # Initialize flask-login
 init_login()

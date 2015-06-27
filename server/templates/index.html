@@ -24,7 +24,7 @@
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <button id="nav-menu-toggler" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -33,9 +33,9 @@
           <a class="navbar-brand pretty-title" href="#"><span class="en-title">LEGO</span> cover band</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-right nav-top">
             <li class="active"><a class="smooth-scroll pretty-title" href="#h">Главная</a></li>
-            <li><a class="smooth-scroll pretty-title" href="#promo">Видео</a></li>
+            <li><a class="smooth-scroll pretty-title" href="#video">Видео</a></li>
             <li><a class="smooth-scroll pretty-title" href="#photo">Фото</a></li>
             <li><a class="smooth-scroll pretty-title" href="#staff">Состав</a></li>
             <li><a class="smooth-scroll pretty-title" href="#contacts">Связаться</a></li>
@@ -66,28 +66,91 @@
         </div>
     </section>
 
-    <section class="promo" id="promo">
-        <div class="cloak">
-            <div class="container">
-                <div class="row text-center promo-container vcenter">
-                    <h1 class="promo-text">Посмотрите наше промо видео</h1>
-                    <br>
-                    <p>
-                        <a class="fancybox-media icon-link" href="https://vimeo.com/125882554">
-                            <span class="glyphicon glyphicon-play-circle promo-play-icon transition"></span>
-                        </a>
-                    </p>
+    <section class="video" id="video">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            </ol>
+
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <div class="cloak">
+                        <div class="container">
+                            <div class="row text-center video-container vcenter">
+                                <h1 class="video-text">Посмотрите наше промо видео</h1>
+                                <br>
+                                <p>
+                                    <a class="fancybox-media icon-link" href="https://vimeo.com/125882554">
+                                        <span class="glyphicon glyphicon-play-circle video-play-icon transition"></span>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+              </div>
+
+              <!-- Controls -->
+              <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+        </div>
+    </section>
+
+    <section class="staff" id="staff">
+        <div class="container">
+            <div class="row text-center">
+                <h1 class="staff-text">Будем знакомы!</h1>
+            </div>
+            <div class="row text-center">
+                {% for u in staff %}
+                    <div class="col-xs-6 col-sm-6 col-md-3 staff-single-container">
+                        <a href="{{ u.big_img_url }}" class="fancybox-img staff-img-link" title="{{ u.name }}">
+                            <img class="transition-quick" src="{{ u.small_img_url }}">
+                            <div class="staff-img-cloak transition"></div>
+                        </a>
+                        <div class="staff-description">
+                            <h3>{{ u.name }}</h3>
+                            <p>{{ u.desc }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="row text-center">
+                <h2 class="staff-text-bottom"></h2>
             </div>
         </div>
     </section>
 
+    <section class="photo" id="photo">
+        <a class="icon-link fancybox-gallery" rel="photo_gallery" href="{{ url_for('static', filename="img/photo/photo1.jpg") }}">
+            <div class="container">
+                <div class="row text-center vcenter">
+                    <h1>Наши фото</h1>
+                    <span class="glyphicon glyphicon-camera photo-icon"></span>
+                </div>
+            </div>
+            <div class="cloak transition"></div>
+        </a>
+        {% for photo in photo_gallery %}
+            <a class="fancybox-gallery" style="display: none;" rel="photo_gallery" href="{{ photo.url }}">
+        {% endfor %}
+    </section>
 
     <script src="{{ url_for('static', filename="lib/jquery/dist/jquery.min.js") }}"></script>
     <script src="{{ url_for('static', filename="lib/bootstrap/dist/js/bootstrap.min.js") }}"></script>
-    <script src="{{ url_for('static', filename="lib/fancybox/source/jquery.fancybox.js") }}"></script>
+    <script src="{{ url_for('static', filename="lib/fancybox/source/jquery.fancybox.pack.js") }}"></script>
     <script src="{{ url_for('static', filename="lib/fancybox/source/helpers/jquery.fancybox-media.js") }}"></script>
     <script src="{{ url_for('static', filename="lib/jquery-smooth-scroll/jquery.smooth-scroll.js") }}"></script>
+    <script src="{{ url_for('static', filename="lib/imagesloaded/imagesloaded.pkgd.min.js") }}"></script>
+    <script src="{{ url_for('static', filename="lib/lodash/lodash.min.js") }}"></script>
     <script src="{{ url_for('static', filename="js/main.js") }}"></script>
   </body>
 </html>

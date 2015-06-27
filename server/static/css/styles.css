@@ -6788,6 +6788,10 @@ h6 {
   -webkit-transition: all 1s;
   transition: all 1s;
 }
+.transition-quick {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
 a.icon-link {
   color: #ffffff;
   position: relative;
@@ -6796,11 +6800,20 @@ a.icon-link:hover {
   color: #ffffff;
   cursor: pointer;
 }
+a.white-link {
+  color: #ffffff;
+}
 .en-title {
   font-family: 'Kaushan Script', sans-serif;
 }
 .pretty-title {
   font-family: 'Lobster', cursive;
+}
+.bg_cover {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 /******   Intro section   *****/
 .intro {
@@ -6838,8 +6851,8 @@ a.icon-link:hover {
 .slogan h2 {
   padding-bottom: 10px;
 }
-/******   Promo section   *****/
-.promo {
+/******   video section   *****/
+.video {
   background: url("../img/promo_background.jpg") no-repeat center top;
   height: 100%;
   width: 100%;
@@ -6849,26 +6862,121 @@ a.icon-link:hover {
   -o-background-size: cover;
   background-size: cover;
 }
-.promo-text {
+.video div {
+  height: 100%;
+}
+.video-text {
   font-size: 54px;
 }
-.promo .cloak {
+.video .cloak {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.4);
 }
-.promo .container {
+.video .container {
   height: 100%;
   display: table;
 }
-.promo .vcenter {
+.vcenter {
   display: table-cell;
   vertical-align: middle;
 }
-.promo-play-icon {
+.video-play-icon {
   font-size: 108px;
   top: 0;
 }
-.promo-play-icon:hover {
+.video-play-icon:hover {
   top: -15px;
+}
+/******   Staff section   *****/
+.staff {
+  background: #33cc66;
+  color: #ffffff;
+}
+.staff-text {
+  font-size: 54px;
+}
+.staff-text-bottom {
+  font-size: 43px;
+}
+.staff-container {
+  height: 100%;
+  background: #ffffff;
+}
+.staff-single-container img {
+  width: 100%;
+}
+.staff-description {
+  background: #1f7a3d;
+  padding: 15px 5px 10px;
+}
+.staff-description h3 {
+  margin-top: 0;
+}
+a.staff-img-link {
+  display: block;
+  position: relative;
+}
+.staff-img-cloak {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  background: #fdfdfd;
+  opacity: 0.2;
+}
+.staff-img-cloak:hover {
+  opacity: 0;
+}
+/********  Photo section  ********/
+.photo {
+  position: relative;
+  height: 50%;
+  min-height: 300px;
+  background: url("../img/photo_background.jpg") no-repeat center top;
+  color: #ffffff;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.photo div {
+  height: 100%;
+}
+.photo a.icon-link {
+  position: relative;
+  display: block;
+  height: 100%;
+}
+.photo .container {
+  top: 0;
+  height: 100%;
+  display: table;
+}
+.photo .cloak {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background: #000000;
+  opacity: 0.3;
+}
+.photo .cloak:hover {
+  opacity: 0;
+}
+.photo .row {
+  width: 100%;
+}
+.photo-icon {
+  font-size: 108px;
+  text-decoration: none;
+}
+/********  Additinal stuff  ********/
+.row.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+.row.no-gutters > [class^="col-"],
+.row.no-gutters > [class*=" col-"] {
+  padding-right: 0;
+  padding-left: 0;
 }
