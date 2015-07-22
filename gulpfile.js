@@ -4,8 +4,8 @@ var less = require('gulp-less');
 
 var paths = {
     less: {
-        src: 'server/static/less/**/*.less',
-        dest: 'server/static/css'
+        src: 'server/app/static/less/**/*.less',
+        dest: 'server/app/static/css'
     }
 };
 
