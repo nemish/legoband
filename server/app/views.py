@@ -2,7 +2,7 @@
 from flask import render_template, url_for, request, jsonify
 
 from app import app, db
-from app.forms import ContactForm
+from app.forms import ContactForm, LoginForm
 from app.models import Message
 
 
@@ -76,3 +76,12 @@ def contact_me():
         message.notify()
         return jsonify(message=u'Спасибо, мы с вами свяжемся.')
     return jsonify(form.errors)
+
+
+@app.route('/login/', methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
+    if form.validate_on_submit():
+        pass
+        # user = User.
+    return render_template('login.html', form=form)
