@@ -1,0 +1,26 @@
+{% extends 'admin/master.html' %}
+
+{% block access_control %}
+{% if current_user.is_authenticated() %}
+    <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <i class="icon-user"></i> {{ current_user.name }} <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="{{ url_for('admin.logout') }}">Log out</a></li>
+            </ul>
+        </li>
+    </ul>
+{% endif %}
+{% endblock %}
+
+{% block body %}
+  <div class="container">
+      <div class="row">
+          <h3>Это административная панель сайта legoband.ru</h3>
+          <p>Для редактирования главной страницы воспользуйтесь моделью MainPage</p>
+          <p>Для просмотра сообщений оставленных через форму обратной связи воспользуйтесь моделью Message</p>
+      </div>
+  </div>
+{% endblock %}

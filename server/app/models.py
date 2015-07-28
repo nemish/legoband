@@ -65,3 +65,5 @@ class Message(db.Model):
 
 class Page(db.Model):
     __tablename__ = 'page'
+    id = db.Column(db.Integer, primary_key=True)
+    url = db.Column(db.String(512))
