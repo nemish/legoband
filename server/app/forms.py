@@ -2,7 +2,9 @@
 
 from flask.ext.wtf import Form, RecaptchaField
 from wtforms import TextField, StringField, TextAreaField, PasswordField
-from wtforms.validators import Required, Email
+from wtforms.validators import Required, Email, ValidationError
+
+from app.models import User
 
 
 class ContactForm(Form):
@@ -17,13 +19,13 @@ class LoginForm(Form):
     email = TextField('Email address', [Required(), Email()])
     password = PasswordField('Password', [Required()])
 
-# class RegisterForm(Form):
-#   name = TextField('NickName', [Required()])
-#   email = TextField('Email address', [Required(), Email()])
-#   password = PasswordField('Password', [Required()])
-#   confirm = PasswordField('Repeat Password', [
-#       Required(),
-#       EqualTo('password', message='Passwords must match')
-#       ])
-#   accept_tos = BooleanField('I accept the TOS', [Required()])
-#   recaptcha = RecaptchaField()
+    def validate_email(self, field):
+        user = self.get_user()
+        if user is None:
+            raise ValidationError(u'Пользователь с таким email\'ом не существует')
+
+        if user.password != self.data['password']:
+            raise ValidationError(u'Неверный пароль')
+
+    def get_user(self):
+        return User.query.filter_by(email=self.data['email']).first()

@@ -16,10 +16,16 @@ mail = Mail(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 
-
 db = SQLAlchemy(app)
+
+from app.models import User
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(user_id)
 
 
 from app import views
 from app import admin
+
 

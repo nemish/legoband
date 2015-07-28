@@ -22,14 +22,13 @@
 <body>
     <div class="container">
         <h2 class="form-signin-heading text-center">Залогиниться будет не лишним</h2>
-        <form class="form-signin" action="/login/">
+        <form method="POST" class="form-signin" action="/admin/login/">
+            {{ form.hidden_tag() }}
             {{ form.email(id='inputEmail', class="form-control", placeholder="Email", required=true, autofocus=true) }}
             {{ form.password(id='inputPassword', class="form-control", placeholder="Пароль", required=true) }}
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" value="remember-me"> Запомнить
-                </label>
-            </div>
+            {% for error in form.errors.email %}
+                <p>{{ error }}</p>
+            {% endfor %}
             <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
         </form>
     </div> <!-- /container -->
