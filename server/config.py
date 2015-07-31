@@ -3,10 +3,16 @@
 import os
 _basedir = os.path.abspath(os.path.dirname(__file__))
 
+OFF = False
+# OFF = True
 DEBUG = True
 
 ADMINS = frozenset(['nemish.i.nelos@gmail.com'])
 SECRET_KEY = 'dfahl3krh1;2l3krh1;2lk3rh1;l2k3hr;'
+
+UPLOAD_FOLDER = os.path.join(_basedir, 'app', 'static', 'media')
+PHOTO_FOLDER = os.path.join(UPLOAD_FOLDER, 'photo')
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 
 DATABASE_PATH = os.path.join(_basedir, 'app.db')
 SQLALCHEMY_DATABASE_URI = 'sqlite:///' + DATABASE_PATH

@@ -9,7 +9,7 @@ from app.models import User
 
 class ContactForm(Form):
     name = StringField(label=u'Имя', validators=[Required()])
-    email = TextField(label=u'Email', validators=[Email()])
+    email = TextField(label=u'Email')
     phone = StringField(label=u'Телефон', validators=[Required()])
     message = TextAreaField(label=u'Сообщение')
     recaptcha = RecaptchaField()

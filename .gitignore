@@ -1,6 +1,7 @@
 *.sublime*
 node_modules
-server/static/lib
+static/lib/
 *.rdb
 *.pyc
 *.log
+media/

@@ -6857,6 +6857,9 @@ hr.star-primary:after {
 .img-centered {
   margin: 0 auto;
 }
+a img {
+  border: 0;
+}
 /******   Intro section   *****/
 .intro {
   background: url("../img/header_full_cropped.jpg") no-repeat center top;
