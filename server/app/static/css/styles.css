@@ -6862,7 +6862,7 @@ a img {
 }
 /******   Intro section   *****/
 .intro {
-  background: url("../img/header_full_cropped.jpg") no-repeat center top;
+  background: url("../img/header_full_cropped.jpg") no-repeat center top fixed;
   height: 100%;
   width: 100%;
   -webkit-background-size: cover;
@@ -7210,8 +7210,14 @@ footer .footer-below {
     -o-background-size: auto 100%;
     background-size: auto 100%;
   }
+  .welcome-container {
+    bottom: 20px;
+  }
   .welcome h1 {
     font-size: 36px;
+  }
+  .video-text {
+    font-size: 32px;
   }
   .contacts-container h1 {
     font-size: 21px;
