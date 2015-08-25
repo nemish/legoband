@@ -134,8 +134,13 @@ a img {
   .bg_cover();
 }
 
+.welcome-container {
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+}
+
 .welcome {
-  top: 400px;
   background: fade(@green, 90%);
   padding: 10px;
   color: @white;
@@ -534,10 +539,6 @@ footer {
   .intro {
     background: url("@{img_path}/header_narrow.jpg") no-repeat center bottom;
     .bg_full_width();
-  }
-
-  .welcome {
-    top: 300px;
   }
 
   .welcome h1 {

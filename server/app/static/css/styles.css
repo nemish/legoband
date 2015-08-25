@@ -6870,8 +6870,12 @@ a img {
   -o-background-size: cover;
   background-size: cover;
 }
+.welcome-container {
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+}
 .welcome {
-  top: 400px;
   background: rgba(51, 204, 102, 0.9);
   padding: 10px;
   color: #ffffff;
@@ -7205,9 +7209,6 @@ footer .footer-below {
     -moz-background-size: auto 100%;
     -o-background-size: auto 100%;
     background-size: auto 100%;
-  }
-  .welcome {
-    top: 300px;
   }
   .welcome h1 {
     font-size: 36px;
