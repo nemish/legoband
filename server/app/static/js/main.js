@@ -10,27 +10,6 @@ $(document).ready(function() {
         }
     });
 
-    $('.fancybox-img').fancybox({
-        helpers : {
-            title: {
-                type: 'float'
-            },
-            overlay: {
-                locked: false
-            }
-        }
-    });
-
-    $('.fancybox-gallery').fancybox({
-        openEffect  : 'none',
-        closeEffect : 'none',
-        helpers : {
-            overlay: {
-                locked: false
-            }
-        }
-    });
-
     $('.smooth-scroll').smoothScroll({
         offset: -50,
         speed: 1000
