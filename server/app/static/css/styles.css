@@ -6816,10 +6816,10 @@ a.white-link {
   background-size: cover;
 }
 .bg_full_width {
-  -webkit-background-size: auto 120%;
-  -moz-background-size: auto 120%;
-  -o-background-size: auto 120%;
-  background-size: auto 120%;
+  -webkit-background-size: auto 100%;
+  -moz-background-size: auto 100%;
+  -o-background-size: auto 100%;
+  background-size: auto 100%;
 }
 hr.star-light,
 hr.star-primary {
@@ -7205,10 +7205,10 @@ footer .footer-below {
 @media all and (max-width: 500px) {
   .intro {
     background: url("../img/header_narrow.jpg") no-repeat center bottom;
-    -webkit-background-size: auto 120%;
-    -moz-background-size: auto 120%;
-    -o-background-size: auto 120%;
-    background-size: auto 120%;
+    -webkit-background-size: auto 100%;
+    -moz-background-size: auto 100%;
+    -o-background-size: auto 100%;
+    background-size: auto 100%;
   }
   .welcome-container {
     bottom: 20px;
