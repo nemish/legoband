@@ -6793,11 +6793,11 @@ h6 {
   transition: all 0.5s;
 }
 a.icon-link {
-  color: #ffffff;
+  color: #0b3954;
   position: relative;
 }
 a.icon-link:hover {
-  color: #ffffff;
+  color: #ff6663;
   cursor: pointer;
 }
 a.white-link {
@@ -6876,7 +6876,7 @@ a img {
   width: 100%;
 }
 .welcome {
-  background: rgba(51, 204, 102, 0.9);
+  background: #fefffe;
   padding: 10px;
   color: #ffffff;
 }
@@ -7162,13 +7162,11 @@ footer h3 {
 footer .footer-above {
   padding-top: 50px;
   background-color: #003333;
-}
-footer .footer-col {
   margin-bottom: 50px;
 }
 footer .footer-below {
   padding: 25px 0;
-  background-color: #00191a;
+  background-color: #000000;
 }
 .btn-social {
   display: inline-block;

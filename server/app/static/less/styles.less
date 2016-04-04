@@ -10,7 +10,12 @@
 @white: #ffffff;
 @black: #000000;
 @grey: #2c3e50;
-@very-dark-blue: #003333;
+@very_dark_blue: #003333;
+
+@cosy_blue_grey: #0B3954;
+@terracot_light: #FF6663;
+@lighter: #FEFFFE;
+
 
 @title-text: floor((@font-size-h1 * 1.5));
 
@@ -43,12 +48,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a.icon-link {
-  color: @white;
+  color: @cosy_blue_grey;
   position: relative;
 }
 
 a.icon-link:hover {
-  color: @white;
+  color: @terracot_light;
   cursor: pointer;
 }
 
@@ -141,7 +146,7 @@ a img {
 }
 
 .welcome {
-  background: fade(@green, 90%);
+  background: @lighter;
   padding: 10px;
   color: @white;
 }
@@ -487,14 +492,13 @@ footer {
   }
   .footer-above {
     padding-top: 50px;
-    background-color: @very-dark-blue;
-  }
-  .footer-col {
+    background-color: @very_dark_blue;
     margin-bottom: 50px;
   }
+
   .footer-below {
     padding: 25px 0;
-    background-color: darken(@very-dark-blue, 5%);
+    background-color: darken(@cosy_blue_grey, 20%);
   }
 }
 

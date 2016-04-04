@@ -87,8 +87,7 @@ def init_default_data():
 
 if __name__ == '__main__':
     init()
-    if not os.path.exists(app.config['DATABASE_PATH']):
-        build_sample_db()
+    build_sample_db()
     init_default_data()
 
     app.run(debug=True)

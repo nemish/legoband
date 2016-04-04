@@ -14,8 +14,9 @@ UPLOAD_FOLDER = os.path.join(_basedir, 'app', 'static', 'media')
 PHOTO_FOLDER = os.path.join(UPLOAD_FOLDER, 'photo')
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 
-DATABASE_PATH = os.path.join(_basedir, 'app.db')
-SQLALCHEMY_DATABASE_URI = 'sqlite:///' + DATABASE_PATH
+# DATABASE_PATH = os.path.join(_basedir, 'app.db')
+# SQLALCHEMY_DATABASE_URI = 'sqlite:///' + DATABASE_PATH
+SQLALCHEMY_DATABASE_URI = 'mysql://legoband_user:123321@localhost/legoband_db'
 SQLALCHEMY_ECHO = True
 DATABASE_CONNECT_OPTIONS = {}
 

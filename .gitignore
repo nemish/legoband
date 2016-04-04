@@ -6,3 +6,5 @@ static/lib/
 *.pyc
 *.log
 media/
+
+server/config.py
