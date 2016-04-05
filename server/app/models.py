@@ -80,6 +80,8 @@ class Page(db.Model):
     vk_link = db.Column(db.String(128))
     facebook_link = db.Column(db.String(128))
     vimeo_link = db.Column(db.String(128))
+    youtube_link = db.Column(db.String(128))
+    instagram_link = db.Column(db.String(128))
     twitter_link = db.Column(db.String(128))
 
     @classmethod
