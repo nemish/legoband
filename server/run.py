@@ -87,7 +87,4 @@ def init_default_data():
 
 if __name__ == '__main__':
     init()
-    build_sample_db()
-    init_default_data()
-
     app.run(debug=True)

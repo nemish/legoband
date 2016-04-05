@@ -6781,7 +6781,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Lobster', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 /******   Common styles   *****/
 .transition {
@@ -6793,7 +6793,7 @@ h6 {
   transition: all 0.5s;
 }
 a.icon-link {
-  color: #0b3954;
+  color: #5b7abb;
   position: relative;
 }
 a.icon-link:hover {
@@ -6804,10 +6804,10 @@ a.white-link {
   color: #ffffff;
 }
 .en-title {
-  font-family: 'Kaushan Script', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 .pretty-title {
-  font-family: 'Lobster', cursive;
+  font-family: 'Open Sans', sans-serif;
 }
 .bg_cover {
   -webkit-background-size: cover;
@@ -6841,11 +6841,11 @@ hr.star-primary:after {
   font-size: 2em;
 }
 hr.star-light {
-  border-color: #fff;
+  border-color: #ffffff;
 }
 hr.star-light:after {
-  color: #fff;
-  background-color: #33cc66;
+  color: #ffffff;
+  background-color: #f7d444;
 }
 hr.star-primary {
   border-color: #2c3e50;
@@ -6876,9 +6876,15 @@ a img {
   width: 100%;
 }
 .welcome {
-  background: #fefffe;
+  background: rgba(254, 255, 254, 0.7);
   padding: 10px;
   color: #ffffff;
+}
+#welcome-logo-img {
+  width: 300px;
+}
+#footer-logo-img {
+  width: 100px;
 }
 .welcome h1 {
   font-size: 46px;
@@ -6895,9 +6901,10 @@ a img {
 }
 /******   Slogan section   *****/
 .slogan {
-  color: #33cc66;
+  background: #74b65f;
 }
-.slogan h2 {
+.slogan h3 {
+  color: #ffffff;
   padding-bottom: 10px;
 }
 /******   video section   *****/
@@ -6932,15 +6939,17 @@ a img {
 }
 .video-play-icon {
   font-size: 108px;
+  color: rgba(255, 255, 255, 0.3);
   top: 0;
 }
 .video-play-icon:hover {
   top: -15px;
+  color: #ffffff;
 }
 /******   Staff section   *****/
 .staff {
-  background: #33cc66;
-  color: #ffffff;
+  background: #f7d444;
+  color: #003333;
 }
 .staff-text {
   font-size: 54px;
@@ -6956,7 +6965,8 @@ a img {
   width: 100%;
 }
 .staff-description {
-  background: #1f7a3d;
+  border: 10px solid #ffffff;
+  background: #f7d444;
   padding: 15px 5px 10px;
 }
 .staff-description h3 {
@@ -6971,11 +6981,11 @@ a.staff-img-link {
   height: 100%;
   width: 100%;
   top: 0;
-  background: #33cc66;
+  background: #f7d444;
   opacity: 0;
 }
 .staff-img-cloak:hover {
-  opacity: 0.9;
+  opacity: 0.5;
 }
 .staff-img-cloak-content {
   position: absolute;
@@ -6992,7 +7002,7 @@ a.staff-img-link {
   position: relative;
   height: 50%;
   min-height: 300px;
-  background: url("../img/photo_background.jpg") no-repeat center top;
+  background: url("../img/music_crowd_wide.jpg") no-repeat center top;
   color: #ffffff;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -7006,6 +7016,8 @@ a.staff-img-link {
   position: relative;
   display: block;
   height: 100%;
+  color: #ffffff;
+  font-weight: bold;
 }
 .photo .container {
   top: 0;
@@ -7016,8 +7028,9 @@ a.staff-img-link {
   width: 100%;
   position: absolute;
   top: 0;
+  z-index: 10;
   background: #000000;
-  opacity: 0.3;
+  opacity: 0.2;
 }
 .photo .cloak:hover {
   opacity: 0;
@@ -7160,13 +7173,12 @@ footer h3 {
   margin-bottom: 30px;
 }
 footer .footer-above {
-  padding-top: 50px;
+  padding: 20px 0;
   background-color: #003333;
-  margin-bottom: 50px;
 }
 footer .footer-below {
   padding: 25px 0;
-  background-color: #000000;
+  background-color: #344b7c;
 }
 .btn-social {
   display: inline-block;
@@ -7199,6 +7211,18 @@ footer .footer-below {
   background: white;
   border: solid 2px white;
 }
+.afisha {
+  margin-bottom: 15px;
+}
+.event-desc {
+  margin: 0 20px 10px;
+}
+.event-container {
+  border: 5px solid #003333;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
 /*********  MEDIA CUSTOM OVERRIDES  *********/
 @media all and (max-width: 500px) {
   .intro {
@@ -7219,5 +7243,8 @@ footer .footer-below {
   }
   .contacts-container h1 {
     font-size: 21px;
+  }
+  #welcome-logo-img {
+    width: 200px;
   }
 }

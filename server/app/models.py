@@ -130,6 +130,15 @@ class Photo(db.Model):
         return url_for('static', filename=os.path.join('media', 'photo', filename))
 
 
+class Event(db.Model):
+    __tablename__ = 'event'
+    id = db.Column(db.Integer, primary_key=True)
+    date = db.Column(db.DateTime)
+    title = db.Column(db.String(512))
+    location = db.Column(db.String(512), nullable=True)
+    description = db.Column(db.Text, nullable=True)
+
+
 @listens_for(Photo, 'after_delete')
 def del_image(mapper, connection, target):
     photo_path = app.config['PHOTO_FOLDER']

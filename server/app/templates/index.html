@@ -37,6 +37,9 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right nav-top">
             <li class="active"><a class="smooth-scroll pretty-title" href="#h">Главная</a></li>
+            {% if events %}
+            <li><a class="smooth-scroll pretty-title" href="#afisha">Афиша</a></li>
+            {% endif %}
             <li><a class="smooth-scroll pretty-title" href="#video">Видео</a></li>
             <li><a class="smooth-scroll pretty-title" href="#photo">Фото</a></li>
             <li><a class="smooth-scroll pretty-title" href="#staff">Состав</a></li>
@@ -50,9 +53,13 @@
         <div class="container welcome-container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center welcome">
-<!--                     <h1>Мы <span class="en-title">LEGO</span> band!</h1>
-                    <h4>{{ page.welcome_section_text }}</h4>
- -->                    <a class="icon-link smooth-scroll" href="#slogan-section">
+                    <div>
+                        <a class="icon-link">
+                            <img id="welcome-logo-img" src="{{ url_for('static', filename="img/lego_logo_transparent.png") }}" />
+                        </a>
+
+                    </div>
+                    <a class="icon-link smooth-scroll" href="#slogan-section">
                         <span class="glyphicon glyphicon-chevron-down arrow-down-icon transition"></span>
                     </a>
                 </div>
@@ -63,10 +70,45 @@
     <section class="slogan" id="slogan-section">
         <div class="container">
             <div class="row text-center">
-                <h2>{{ page.slogan }}</h2>
+                <h3>{{ page.slogan }}</h3>
             </div>
         </div>
     </section>
+
+    {% if events %}
+    <section class="afisha" id="afisha">
+        <div class="container">
+            <div class="row text-center">
+                <h3>Афиша</h3>
+                <hr class="star-primary">
+
+                {% for two_events in events %}
+                <div class="row afisha-text-container">
+                    {% for event in two_events if event %}
+                    <div class="col-md-6 col-xs-12">
+                        <div class="event-container">
+                            <h3>{{ event.title }}</h3>
+                            <ul class="text-left">
+                                <li><strong>Когда:</strong> {{ event.date.strftime('%d.%m.%Y') }}</li>
+                                <li><strong>Где:</strong> {{ event.location or '-' }}</li>
+                            </ul>
+                            {% if event.description %}
+                                <p class="text-left event-desc">
+                                    <strong>Что будет:</strong>
+                                    {% for line in event.description.splitlines() %}
+                                        {{line}}<br>
+                                    {% endfor %}
+                                </p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                <div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% endif %}
 
     <section class="video" id="video">
         <div id="carousel-video" class="carousel slide" data-ride="carousel">
@@ -142,7 +184,7 @@
         <a class="icon-link" rel="photo_gallery" href="{{ photos[0].get_full_image_url() }}" data-gallery>
             <div class="container">
                 <div class="row text-center vcenter">
-                    <h1>Наши фото</h1>
+                    <h1>Наши и ваши фотки :)</h1>
                     <span class="glyphicon glyphicon-camera photo-icon"></span>
                 </div>
             </div>
@@ -158,13 +200,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 contacts-container">
-                    <h1 class="en-title">Phone: {{ page.phone }}</h1>
-                    <h1 class="en-title">Email: {{ page.email }}</h1>
+                    <h2 class="en-title">Phone: {{ page.phone }}</h2>
+                    <h2 class="en-title">Email: {{ page.email }}</h2>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="text-center">Напишите нам</h3>
+                    <h3 class="text-center">Пишите нам</h3>
                 </div>
                 <div class="col-lg-8 col-lg-offset-2">
                     <div class="alert alert-success notify-alert success" role="alert">
@@ -251,7 +293,9 @@
                     <div class="footer-col col-md-4">
                         <h3>Резюмируем</h3>
                         <p>{{ page.footer_text }}</p>
-                        <h4 class="text-center"><a class="white-link smooth-scroll pretty-title" href="#h">Legoband</a></h4>
+                        <a class="icon-link">
+                            <img id="footer-logo-img" src="{{ url_for('static', filename="img/lego_logo_transparent.png") }}" />
+                        </a>
                     </div>
                 </div>
             </div>

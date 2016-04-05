@@ -16,16 +16,19 @@ $(document).ready(function() {
     });
 
     imagesLoaded('.staff-single-container', function () {
-        var staffDesctiptionsHeights = [];
-        $('.staff-description').each(function (index, element) {
-            staffDesctiptionsHeights.push($(element).height());
-        });
-        $('.staff-description').height(_.max(staffDesctiptionsHeights));
+        alignHeights('.staff-description');
     });
 
     // Closes the Responsive Menu on Menu Item Click
     $('.navbar-collapse ul li a').click(function() {
         $('.navbar-toggle:visible').click();
     });
-
 });
+
+function alignHeights (itemsCls) {
+    var heights = [];
+    $(itemsCls).each(function (index, element) {
+        heights.push($(element).height());
+    });
+    $(itemsCls).height(_.max(heights));
+}
