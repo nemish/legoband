@@ -158,7 +158,7 @@
             </div>
             <div class="row text-center">
                 {% for u in staff %}
-                    <div class="col-xs-6 col-sm-6 col-md-3 staff-single-container">
+                    <div class="col-xs-12 col-sm-6 col-md-3 staff-single-container">
                         <a href="#staff-modal-{{ u.id }}" class="staff-img-link" title="{{ u.name }}" data-toggle="modal">
                             <div class="staff-img-cloak transition-quick">
                                 <div class="staff-img-cloak-content">
@@ -200,13 +200,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 contacts-container">
-                    <h2 class="en-title">Phone: {{ page.phone }}</h2>
-                    <h2 class="en-title">Email: {{ page.email }}</h2>
+                    <h4 class="en-title">Phone: {{ page.phone }}</h4>
+                    <h4 class="en-title">Email: {{ page.email }}</h4>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="text-center">Пишите нам</h3>
+                    <h4 class="text-center">Пишите нам</h4>
                 </div>
                 <div class="col-lg-8 col-lg-offset-2">
                     <div class="alert alert-success notify-alert success" role="alert">

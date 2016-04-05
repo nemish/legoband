@@ -64,12 +64,10 @@ a.white-link {
 }
 
 .en-title {
-    // font-family: 'Kaushan Script', sans-serif;
     font-family: 'Open Sans', sans-serif;
 }
 
 .pretty-title {
-    // font-family: 'Lobster', cursive;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -261,6 +259,10 @@ a img {
 .staff-container {
   height: 100%;
   background: @white;
+}
+
+.staff-single-container {
+  margin-bottom: 10px;
 }
 
 .staff-single-container img {
@@ -565,6 +567,7 @@ footer {
 
 
 .event-container {
+  margin: 10px;
   border: 5px solid @dark_grey;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -575,16 +578,20 @@ footer {
 /*********  MEDIA CUSTOM OVERRIDES  *********/
 
 @media all and (max-width: 500px) {
-  .intro {
-    background: url("@{img_path}/header_narrow.jpg") no-repeat center bottom;
-    .bg_full_width();
-  }
 
   .welcome-container {
     bottom: 20px;
   }
 
   .welcome h1 {
+    font-size: @font-size-h1;
+  }
+
+  .slogan h3 {
+    font-size: floor((@font-size-h1 * 0.6));
+  }
+
+  .staff-text {
     font-size: @font-size-h1;
   }
 
@@ -598,5 +605,12 @@ footer {
 
   #welcome-logo-img {
     width: 200px;
+  }
+}
+
+@media (max-width: 800px) {
+  .intro {
+    background: url("@{img_path}/header_narrow.jpg") no-repeat center bottom;
+    .bg_full_width();
   }
 }

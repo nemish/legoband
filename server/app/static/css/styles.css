@@ -6961,6 +6961,9 @@ a img {
   height: 100%;
   background: #ffffff;
 }
+.staff-single-container {
+  margin-bottom: 10px;
+}
 .staff-single-container img {
   width: 100%;
 }
@@ -7218,6 +7221,7 @@ footer .footer-below {
   margin: 0 20px 10px;
 }
 .event-container {
+  margin: 10px;
   border: 5px solid #003333;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -7225,17 +7229,16 @@ footer .footer-below {
 }
 /*********  MEDIA CUSTOM OVERRIDES  *********/
 @media all and (max-width: 500px) {
-  .intro {
-    background: url("../img/header_narrow.jpg") no-repeat center bottom;
-    -webkit-background-size: auto 100%;
-    -moz-background-size: auto 100%;
-    -o-background-size: auto 100%;
-    background-size: auto 100%;
-  }
   .welcome-container {
     bottom: 20px;
   }
   .welcome h1 {
+    font-size: 36px;
+  }
+  .slogan h3 {
+    font-size: 21px;
+  }
+  .staff-text {
     font-size: 36px;
   }
   .video-text {
@@ -7246,5 +7249,14 @@ footer .footer-below {
   }
   #welcome-logo-img {
     width: 200px;
+  }
+}
+@media (max-width: 800px) {
+  .intro {
+    background: url("../img/header_narrow.jpg") no-repeat center bottom;
+    -webkit-background-size: auto 100%;
+    -moz-background-size: auto 100%;
+    -o-background-size: auto 100%;
+    background-size: auto 100%;
   }
 }
