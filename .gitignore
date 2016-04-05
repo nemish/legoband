@@ -8,3 +8,4 @@ static/lib/
 media/
 
 server/config.py
+legoband.ini
