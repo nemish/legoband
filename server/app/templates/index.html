@@ -206,7 +206,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <h4 class="text-center">Связаться</h4>
+                    <h4 class="text-center">Напиишите нам</h4>
                 </div>
                 <div class="col-lg-8 col-lg-offset-2">
                     <div class="alert alert-success notify-alert success" role="alert">
@@ -237,14 +237,14 @@
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 {{ contact_form.phone.label }}
-                                {{ contact_form.phone(type="tel", placeholder="Номер телефона", id="phone", class="form-control", required=true, **{'data-validation-required-message':"Пожалуйста, введите ваш номер телефона."}) }}
+                                {{ contact_form.phone(type="tel", placeholder="Ваш номер телефона", id="phone", class="form-control", required=true, **{'data-validation-required-message':"Пожалуйста, введите ваш номер телефона."}) }}
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 {{ contact_form.message.label }}
-                                {{ contact_form.message(placeholder="Узнать стоимость выступления", id="message", class="form-control", rows="3") }}
+                                {{ contact_form.message(placeholder="Текст сообщения", id="message", class="form-control", rows="3") }}
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
