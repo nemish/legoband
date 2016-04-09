@@ -41,7 +41,7 @@ class Message(db.Model):
 
     def notify(self):
         send_email(
-            u'Legoband.ru - новая заявка',
+            u'Legoband.ru - новая заявка - {}'.format(self.id),
             self.get_body(),
             self.get_html_body(),
             self.set_notified
