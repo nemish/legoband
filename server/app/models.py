@@ -49,8 +49,9 @@ class Message(db.Model):
 
     def set_notified(self):
         self.sent_on = datetime.now()
-        db.session.add(self)
-        db.session.commit()
+        session = db.session.object_session(self)
+        session.add(self)
+        session.commit()
 
     def get_body(self):
         return self._get_joined_string('\n')
