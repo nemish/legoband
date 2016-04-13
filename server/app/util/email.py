@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 from app.util.decorators import async
 from config import ADMINS, MAIL_SERVER, MAIL_PORT, MAIL_USERNAME, MAIL_PASSWORD
 
@@ -8,7 +9,7 @@ def send_email(subject, body, callback=None):
     import smtplib
 
     # Prepare actual message
-    message = '\From: {}\nTo: {}\nSubject: {}\n\n{}'.format(MAIL_USERNAME, ", ".join(ADMINS), subject, body)
+    message = u'\From: {}\nTo: {}\nSubject: {}\n\n{}'.format(MAIL_USERNAME, ", ".join(ADMINS), subject, body)
 
     try:
         # SMTP_SSL Example
