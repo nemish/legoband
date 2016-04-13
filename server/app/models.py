@@ -43,7 +43,6 @@ class Message(db.Model):
         send_email(
             u'Legoband.ru - новая заявка - {}'.format(self.id),
             self.get_body(),
-            self.get_html_body(),
             self.set_notified
         )
 
@@ -55,9 +54,6 @@ class Message(db.Model):
 
     def get_body(self):
         return self._get_joined_string('\n')
-
-    def get_html_body(self):
-        return self._get_joined_string('<br>')
 
     def _get_joined_string(self, join_str):
         return join_str.join([
