@@ -1,21 +1,28 @@
 # -*- coding: utf-8 -*-
-from datetime import datetime
 from app.util.decorators import async
-from app import app, mail, db
-from flask.ext.mail import Message
-from config import ADMINS
+from config import ADMINS, MAIL_SERVER, MAIL_PORT, MAIL_USERNAME, MAIL_PASSWORD
 
 
 @async
-def _send_async(app, email, callback=None):
-    with app.app_context():
-        mail.send(email)
+def send_email(subject, body, callback=None):
+    import smtplib
+
+    # Prepare actual message
+    message = '\From: {}\nTo: {}\nSubject: {}\n\n{}'.format(MAIL_USERNAME, ", ".join(ADMINS), subject, body)
+
+    try:
+        # SMTP_SSL Example
+        server_ssl = smtplib.SMTP_SSL(MAIL_SERVER, MAIL_PORT)
+        server_ssl.ehlo() # optional, called by login()
+        server_ssl.login(MAIL_USERNAME, MAIL_PASSWORD)
+        # ssl server doesn't support or need tls, so don't call server_ssl.starttls()
+        server_ssl.sendmail(MAIL_USERNAME, ADMINS, message)
+        #server_ssl.quit()
+        server_ssl.close()
+
         if callback:
             callback()
 
-
-def send_email(subject, text_body, html_body, callback=None):
-    email = Message(subject, sender=ADMINS[0], recipients=ADMINS)
-    email.body = text_body
-    email.html = html_body
-    _send_async(app, email, callback)
+        print 'successfully sent the mail'
+    except:
+        print "failed to send mail"
