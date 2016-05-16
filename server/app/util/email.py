@@ -9,7 +9,7 @@ def send_email(subject, body, callback=None):
     import smtplib
 
     # Prepare actual message
-    message = u'\From: {}\nTo: {}\nSubject: {}\n\n{}'.format(MAIL_USERNAME, ", ".join(ADMINS), subject, body)
+    message = u'\From: {}\nTo: {}\nSubject: {}\n\n{}'.format(MAIL_USERNAME, ", ".join(ADMINS), subject, body).encode('utf8')
 
     try:
         # SMTP_SSL Example
