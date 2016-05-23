@@ -6815,11 +6815,17 @@ a.white-link {
   -o-background-size: cover;
   background-size: cover;
 }
-.bg_full_width {
+.bg_full_height {
   -webkit-background-size: auto 100%;
   -moz-background-size: auto 100%;
   -o-background-size: auto 100%;
   background-size: auto 100%;
+}
+.bg_full_width {
+  -webkit-background-size: 100% auto;
+  -moz-background-size: 100% auto;
+  -o-background-size: 100% auto;
+  background-size: 100% auto;
 }
 hr.star-light,
 hr.star-primary {
@@ -7251,12 +7257,24 @@ footer .footer-below {
     width: 200px;
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 600px) and (orientation: portrait) {
   .intro {
-    background: url("../img/header_narrow.jpg") no-repeat center bottom;
+    background: url("../img/header_narrow_2.jpg") no-repeat center top;
     -webkit-background-size: auto 100%;
     -moz-background-size: auto 100%;
     -o-background-size: auto 100%;
     background-size: auto 100%;
+  }
+}
+@media (max-width: 600px) and (orientation: landscape) {
+  .intro {
+    background: url("../img/header_narrow_2.jpg") no-repeat center top;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    -o-background-size: 100% auto;
+    background-size: 100% auto;
+  }
+  .welcome-container {
+    bottom: 20px;
   }
 }

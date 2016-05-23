@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from app.util.decorators import async
 from config import ADMINS, MAIL_SERVER, MAIL_PORT, MAIL_USERNAME, MAIL_PASSWORD
 
 
-@async
 def send_email(subject, body, callback=None):
     import smtplib
 

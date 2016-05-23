@@ -6,6 +6,7 @@ static/lib/
 *.pyc
 *.log
 media/
+*.log
 
 server/config.py
 legoband.ini

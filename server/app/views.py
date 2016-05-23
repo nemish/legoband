@@ -43,7 +43,6 @@ def contact_me():
         )
         db.session.add(message)
         db.session.commit()
-        message.notify()
         return jsonify({
             'status': 'success',
             'message': u'Спасибо, мы с вами свяжемся.'
